@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    // 1. O 'target' define a versão do JS para a qual o código é transpilado.
+    // 'ES2022' ou 'ESNext' garantem suporte total a recursos modernos.
+    "target": "ES2022",
+
+    // 2. O 'module' define o sistema de módulos (ESM é crucial para 'import.meta').
+    // 'ESNext' ou 'NodeNext' são as melhores escolhas.
+    "module": "ESNext",
+
+    // Outras opções padrão...
+    "moduleResolution": "bundler"
+    // ...
+  }
+}
