@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  vue-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue_app
+    ports:
+      - "8080:80" # Mapeia porta 80 do container para 8080 da máquina
+    restart: always
