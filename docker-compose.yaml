@@ -6,6 +6,15 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: vue_app
+    environment:
+      VUE_APP_API_URL: "http://api:8081/api/"
     ports:
-      - "8080:80" # Mapeia porta 80 do container para 8080 da máquina
+      - "8080:80"
+    networks:
+      - minha_rede_global
+
     restart: always
+
+networks:
+  minha_rede_global:
+    external: true

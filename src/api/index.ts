@@ -5,7 +5,7 @@ import router from "../router";
 // Se o seu router não for exportado como default, ajuste o import.
 
 // ** Configure a URL base da sua API aqui! **
-const API_BASE_URL = "https://localhost:7168/api/";
+const API_BASE_URL = "http://localhost:8081/api/";
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
