@@ -6,6 +6,19 @@
 
 ---
 
+## 🔑 Acesso e Credenciais de Teste
+
+Para realizar o login e testar as funcionalidades da API, utilize as seguintes credenciais que são inseridas automaticamente no banco de dados durante o processo de _seeding_ (carga inicial):
+
+| Campo                  | Credencial                    | Notas                                               |
+| :--------------------- | :---------------------------- | :-------------------------------------------------- |
+| **Usuário (Username)** | `ewerthon32santana@gmail.com` | Usuário de teste com permissão total (Role: Admin). |
+| **Senha (Password)**   | `seila123`                    | Senha de desenvolvimento para acesso inicial.       |
+
+> **Nota de Segurança:** Esta credencial é apenas para o ambiente Docker de desenvolvimento/teste e não deve ser usada em um ambiente de produção.
+
+---
+
 ## 💻 Tecnologias Utilizadas
 
 | Categoria                 | Tecnologia                           | Versão                         |
