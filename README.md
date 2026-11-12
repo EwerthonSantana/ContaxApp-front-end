@@ -1,61 +1,91 @@
-# 🚀 Contax-Front | Sistema de Gestão de Contatos
+# 🚀 Contax-Front | Contact Management System
 
-**(Frontend Vue.js)**
+**(Vue 3 front end)**
 
-> Interface moderna e responsiva para o sistema de gestão de contatos, construída com Vue.js e orquestrada via Docker Compose. Este repositório contém apenas a aplicação Frontend.
-
----
-
-## 🔑 Acesso e Credenciais de Teste
-
-Para realizar o login e testar as funcionalidades da API, utilize as seguintes credenciais que são inseridas automaticamente no banco de dados durante o processo de _seeding_ (carga inicial):
-
-| Campo                  | Credencial                    | Notas                                               |
-| :--------------------- | :---------------------------- | :-------------------------------------------------- |
-| **Usuário (Username)** | `ewerthon32santana@gmail.com` | Usuário de teste com permissão total (Role: Admin). |
-| **Senha (Password)**   | `seila123`                    | Senha de desenvolvimento para acesso inicial.       |
-
-> **Nota de Segurança:** Esta credencial é apenas para o ambiente Docker de desenvolvimento/teste e não deve ser usada em um ambiente de produção.
+> Modern, responsive interface for the contact management system, built with Vue 3 and orchestrated with Docker Compose. This repository contains only the front-end application; the API lives in [ContaxApp-back-end](https://github.com/EwerthonSantana/ContaxApp-back-end).
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## 🔑 Access and Test Credentials
 
-| Categoria                 | Tecnologia                           | Versão                         |
-| :------------------------ | :----------------------------------- | :----------------------------- |
-| **Framework**             | Vue.js                               | 3.x (Composition API)          |
-| **Linguagem**             | TypeScript                           | (ou JavaScript, se for o caso) |
-| **Tooling**               | Vite (ou Vue CLI)                    | Mais recente                   |
-| **Gerenciador de Estado** | Pinia (ou Vuex)                      |                                |
-| **Estilização**           | (Ex: Tailwind CSS, Vuetify, ou SCSS) |                                |
-| **Orquestração**          | Docker                               |                                |
+To log in and try out the features, use the following credentials, which are inserted automatically into the database during _seeding_:
 
-## ✨ Funcionalidades Principais
+| Field        | Credential                    | Notes                                        |
+| :----------- | :---------------------------- | :------------------------------------------- |
+| **Username** | `ewerthon32santana@gmail.com` | Test user with full permissions (Role: Admin). |
+| **Password** | `seila123`                    | Development password for initial access.      |
 
-- **Autenticação JWT:** Login e validação de sessão utilizando tokens fornecidos pela API .NET.
-- **Gestão de Entidades:** CRUD completo (Create, Read, Update, Delete) para a entidade `Contato`.
-- **Interface Responsiva:** Layout adaptável para dispositivos móveis e desktop.
-- **Comunicação Segura:** Conexão otimizada com a API via rede interna do Docker.
+> **Security note:** these credentials are only for the development/test Docker environment and must not be used in production.
 
 ---
 
-## ⚙️ Como Executar o Projeto (Com Docker)
+## 💻 Tech Stack
 
-Este projeto funciona em conjunto com o backend **Contax-API (.NET 9)** e requer que ambos estejam na mesma rede Docker.
+| Category             | Technology                                     | Version |
+| :------------------- | :--------------------------------------------- | :------ |
+| **Framework**        | Vue.js (Composition API)                       | 3.5     |
+| **Language**         | TypeScript / JavaScript                        | —       |
+| **Build tool**       | Vite                                           | 7       |
+| **State management** | Pinia                                          | 3       |
+| **Routing**          | Vue Router                                     | 4       |
+| **UI**               | PrimeVue + PrimeFlex + PrimeIcons              | 4       |
+| **HTTP client**      | Axios                                          | 1       |
+| **Testing**          | Vitest + Vue Testing Library + Vue Test Utils  | 4       |
+| **Orchestration**    | Docker / Docker Compose                        | —       |
 
-### Pré-Requisitos
+## ✨ Main Features
 
-Certifique-se de ter instalado na sua máquina:
+- **JWT authentication:** login and session validation using tokens issued by the .NET API.
+- **Entity management:** full CRUD (Create, Read, Update, Delete) for the `Contact` entity.
+- **Responsive UI:** layout adapted for mobile and desktop.
+- **Internal networking:** communicates with the API through Docker's internal network.
+
+---
+
+## ⚙️ How to Run (with Docker)
+
+This project works together with the **Contax-API (.NET 9)** back end, and both must be on the same Docker network.
+
+### Prerequisites
 
 - **Docker**
-- **Docker Compose** (geralmente incluído na instalação do Docker Desktop)
+- **Docker Compose** (usually included with Docker Desktop)
 
-### 1. Configurar a Rede Compartilhada (Obrigatório)
+### 1. Create the shared network (required)
 
-Como o Frontend e o Backend são projetos separados com seus próprios arquivos `docker-compose.yml`, eles precisam de uma **rede externa** para se comunicarem.
+Since the front end and back end are separate projects, each with its own `docker-compose` file, they need an **external network** to communicate.
 
-Abra o seu terminal (em qualquer diretório) e crie a rede (Este passo só é necessário **uma vez**):
+Open a terminal (in any directory) and create the network (only needed **once**):
 
 ```bash
 docker network create minha_rede_global
 ```
+
+### 2. Start the back end
+
+Follow the [ContaxApp-back-end](https://github.com/EwerthonSantana/ContaxApp-back-end) README. The API runs on `localhost:8081`.
+
+### 3. Start the front end
+
+In this project's folder:
+
+```bash
+docker compose up -d --build
+```
+
+Open **http://localhost:8080**.
+
+---
+
+## 🧑‍💻 Local Development
+
+```bash
+npm install
+npm run dev     # dev server (Vite)
+npm test        # unit tests (Vitest)
+npm run build   # production build
+```
+
+---
+
+**Author:** Ewerthon Santana · [GitHub](https://github.com/EwerthonSantana) · [LinkedIn](https://www.linkedin.com/in/ewerthonsantana/)
